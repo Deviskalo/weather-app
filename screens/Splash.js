@@ -32,7 +32,7 @@ const Splash = () => {
       <StatusBar style="light" />
       <Image
         blurRadius={80}
-        source={require("../assets/images/HcHY.gif")}
+        source={require("../assets/images/splash.jpg")}
         className="w-full h-full absolute"
       />
       <Animated.View

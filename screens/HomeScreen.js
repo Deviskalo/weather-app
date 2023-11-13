@@ -89,14 +89,14 @@ const HomeScreen = () => {
           <Progress.CircleSnail thickness={10} size={140} color="#0bb3b2" />
         </View>
       ) : (
-        <SafeAreaView className="flex flex-1" style={{ top: hp(4) }}>
+        <SafeAreaView className="flex flex-1" style={{ top: hp(3) }}>
           {/* Search Section */}
           <View className="mx-4 relative z-50" style={{ height: "7%" }}>
             <View
               className="flex-row justify-end items-center rounded-full"
               style={{
                 backgroundColor: showSearch
-                  ? theme.bgWhite(0.2)
+                  ? theme.bgWhite(0.5)
                   : "transparent",
               }}
             >
@@ -106,6 +106,7 @@ const HomeScreen = () => {
                   placeholder="Search City"
                   placeholderTextColor={"lightgray"}
                   className="pl-6 h-14 flex-1 text-base text-white"
+                  style={{ zIndex: 999 }}
                 />
               ) : null}
 
@@ -147,17 +148,19 @@ const HomeScreen = () => {
           <ScrollView
             showsVerticalScrollIndicator={false}
             contentContainerStyle={{ paddingVertical: 20 }}
-            className=""
           >
             {/* forcast section */}
             <View className="mx-4 flex justify-around flex-1 mb-4">
               {/* location */}
               <Text
-                className="text-white text-3xl text-center font-bold"
-                style={{ top: hp(2) }}
+                className="text-white text-center font-bold"
+                style={{ top: hp(1.5), fontSize: hp(4), lineHeight: hp(4) }}
               >
                 {location?.name},
-                <Text className="text-lg text-gray-300 font-simibold">
+                <Text
+                  className="text-gray-300 font-simibold"
+                  style={{ fontSize: hp(2.5), lineHeight: hp(4) }}
+                >
                   {"  "}
                   {location?.country}
                 </Text>
@@ -166,7 +169,7 @@ const HomeScreen = () => {
               <View className="flex-row justify-center" style={{ top: hp(4) }}>
                 <Image
                   source={weatherImages[current?.condition?.text]}
-                  className="w-52 h-52"
+                  style={{ width: hp(25), height: hp(25) }}
                 />
               </View>
               {/* Daily stats */}
